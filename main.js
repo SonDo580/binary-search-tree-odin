@@ -4,4 +4,6 @@ function NodeFactory(data, left = null, right = null) {
 
 function TreeFactory(array) {
   let root = null;
+
+  const buildTree = () => {};
 }
