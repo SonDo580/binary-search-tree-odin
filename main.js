@@ -7,3 +7,13 @@ function TreeFactory(array) {
 
   const buildTree = () => {};
 }
+
+function swap(array, i, j) {
+  let temp = arr[i];
+  arr[i] = arr[j];
+  arr[j] = temp;
+}
+
+function partition(array) {}
+
+function quickSort(array) {}
