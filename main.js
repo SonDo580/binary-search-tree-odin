@@ -64,7 +64,20 @@ function insertionSort(array) {
   return array;
 }
 
-// TEST QUICK_SORT
-// const array = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];
-// const sortedArray = quickSort(array, 0, array.length - 1);
-// console.log(sortedArray);
+function removeDuplicates(array) {
+  let object = {};
+  for (let item of array) {
+    if (!object.hasOwnProperty(item)) {
+      object[item] = 1;
+    } else {
+      continue;
+    }
+  }
+  return Object.keys(object);
+}
+
+// TEST SORT AND REMOVE DUPLICATE
+const array = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];
+const sortedArray = quickSort(array, 0, array.length - 1);
+console.log(sortedArray);
+console.log(removeDuplicates(sortedArray));
