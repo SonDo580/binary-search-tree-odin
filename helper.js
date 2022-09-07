@@ -1,14 +1,14 @@
 // swap and partition are used in quickSort
 function swap(array, i, j) {
-  let temp = arr[i];
-  arr[i] = arr[j];
-  arr[j] = temp;
+  let temp = array[i];
+  array[i] = array[j];
+  array[j] = temp;
 }
 
-function partition(array) {
-  //   let pivot = array[0];
-  //   let i = 1;
-  //   let j = arr.length - 1;
+function partition(array, left, right) {
+  //   let pivot = array[Math.floor((left + right) / 2)]; // use the middle element
+  //   let i = left; // left pointer
+  //   let j = right; // right pointer
   //   while (i <= j) {
   //     while (array[i] < pivot) {
   //       i++;
