@@ -17,6 +17,8 @@ function _swap(array, i, j) {
 
 function _partition(array, left, right) {
   let pivot = array[Math.floor((left + right) / 2)]; // use the middle element
+  // the right side of pivot will have greater (by 1)
+  // or the same number of elements as the left side
 
   let i = left; // left pointer
   let j = right; // right pointer
@@ -35,7 +37,7 @@ function _partition(array, left, right) {
     }
   }
 
-  return i;
+  return i; // pivot is now sorted and remain at this same index
 }
 
 function quickSort(array, left, right) {
