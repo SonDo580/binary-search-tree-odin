@@ -5,7 +5,12 @@ function NodeFactory(data, left = null, right = null) {
 function TreeFactory(array) {
   let root = null;
 
-  const buildTree = () => {};
+  const buildTree = () => {
+    // if ((array.length = 0)) {
+    //   return null;
+    // }
+    // array = removeDuplicates(array);
+  };
 }
 
 // SORTING ALGORITHMS
@@ -58,6 +63,7 @@ function quickSort(array, left, right) {
   return array;
 }
 
+// REMOVE DUPLICATES
 function insertionSort(array) {
   // use JS built-in sort()
   array.sort((a, b) => a - b);
@@ -65,6 +71,10 @@ function insertionSort(array) {
 }
 
 function removeDuplicates(array) {
+  if (array.length <= 1) {
+    return array;
+  }
+
   let object = {};
   for (let item of array) {
     if (!object.hasOwnProperty(item)) {
@@ -77,7 +87,7 @@ function removeDuplicates(array) {
 }
 
 // TEST SORT AND REMOVE DUPLICATE
-const array = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];
-const sortedArray = quickSort(array, 0, array.length - 1);
-console.log(sortedArray);
-console.log(removeDuplicates(sortedArray));
+// const array = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];
+// const sortedArray = quickSort(array, 0, array.length - 1);
+// console.log(sortedArray);
+// console.log(removeDuplicates(sortedArray));
