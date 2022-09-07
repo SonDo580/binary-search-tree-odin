@@ -16,9 +16,7 @@ function _swap(array, i, j) {
 }
 
 function _partition(array, left, right) {
-  let pivot = array[Math.floor((left + right) / 2)]; // use the middle element
-  // the right side of pivot will have greater (by 1)
-  // or the same number of elements as the left side
+  let pivot = array[Math.floor((left + right) / 2)]; // use the middle element as pivot
 
   let i = left; // left pointer
   let j = right; // right pointer
