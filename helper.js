@@ -48,9 +48,20 @@ function quickSort(array, left, right) {
   return array;
 }
 
-// TEST QUICKSORT
+function insertionSort(array) {
+  // use JS built-in sort()
+  array.sort((a, b) => a - b);
+  return array;
+}
+
+// TEST QUICK_SORT
 // const array = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];
 // const sortedArray = quickSort(array, 0, array.length - 1);
 // console.log(sortedArray);
 
-export { quickSort };
+// TEST INSERTION_SORT
+// const array = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];
+// const sortedArray = insertionSort(array);
+// console.log(sortedArray);
+
+export { quickSort, insertionSort };
