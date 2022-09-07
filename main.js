@@ -6,10 +6,15 @@ function TreeFactory(array) {
   let root = null;
 
   const buildTree = () => {
-    // if ((array.length = 0)) {
-    //   return null;
-    // }
-    // array = removeDuplicates(array);
+    array = removeDuplicates(array);
+    if (array.length === 0) {
+      return null;
+    }
+    if (array.length === 1) {
+      root = NodeFactory(array[0]);
+    }
+
+    return root;
   };
 }
 
