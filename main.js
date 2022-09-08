@@ -4,6 +4,7 @@ function NodeFactory(data, left = null, right = null) {
 
 function TreeFactory(array) {
   array = quickSort(removeDuplicates(array));
+  console.log(array);
 
   let root = _buildTree(array);
 
@@ -16,11 +17,11 @@ function TreeFactory(array) {
     }
 
     let middle = Math.floor((array.length - 1) / 2);
-    root = NodeFactory(array[middle]);
-    root.left = _buildTree(array.slice(0, middle));
-    root.right = _buildTree(array.slice(middle + 1));
+    let node = NodeFactory(array[middle]);
+    node.left = _buildTree(array.slice(0, middle));
+    node.right = _buildTree(array.slice(middle + 1));
 
-    return root;
+    return node;
   }
 
   function prettyPrint(node = root, prefix = "", isLeft = true) {
@@ -98,4 +99,3 @@ function removeDuplicates(array) {
 const array = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];
 const tree = TreeFactory(array);
 tree.prettyPrint();
-console.log(array);
