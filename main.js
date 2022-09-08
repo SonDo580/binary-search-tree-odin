@@ -25,7 +25,7 @@ function TreeFactory(array) {
 
   function prettyPrint(node = root, prefix = "", isLeft = true) {
     if (node === null) {
-      console.log("Empty Tree!");
+      console.log("Empty!");
       return;
     }
 
@@ -91,7 +91,19 @@ function TreeFactory(array) {
     return min;
   }
 
-  function findValue(value, node = root) {}
+  function findValue(value, node = root) {
+    if (node === null) {
+      return node;
+    }
+
+    if (value < node.data) {
+      return findValue(value, node.left);
+    } else if (value > node.data) {
+      return findValue(value, node.right);
+    } else if (value === node.data) {
+      return node;
+    }
+  }
 
   return { prettyPrint, insertValue, deleteValue, findValue };
 }
@@ -170,3 +182,7 @@ tree.prettyPrint();
 console.log("\n* Delete 10:"); // not found
 tree.deleteValue(10);
 tree.prettyPrint();
+console.log("\n* Find 10:");
+tree.prettyPrint(tree.findValue(10));
+console.log("\n* Find 100:");
+tree.prettyPrint(tree.findValue(100));
