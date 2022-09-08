@@ -4,7 +4,7 @@ function NodeFactory(data, left = null, right = null) {
 
 function TreeFactory(array) {
   array = quickSort(removeDuplicates(array));
-  console.log(array);
+  // console.log(array);
 
   let root = _buildTree(array);
 
@@ -89,13 +89,15 @@ function removeDuplicates(array) {
 }
 
 // TEST SORT AND REMOVE DUPLICATE
-// const array = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];
-// const sortedArray = quickSort(array, 0, array.length - 1);
-// console.log(sortedArray);
-// console.log(removeDuplicates(sortedArray));
+const array = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];
+const sortedArray = quickSort(array, 0, array.length - 1);
+console.log(array);
+console.log(removeDuplicates(array));
+console.log(sortedArray);
+console.log(removeDuplicates(sortedArray));
 
 // DRIVER SCRIPT
 // const array = [];
-const array = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];
+// const array = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];
 const tree = TreeFactory(array);
 tree.prettyPrint();
