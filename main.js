@@ -16,6 +16,8 @@ function TreeFactory(array) {
     }
 
     array = quickSort(array);
+    let middle = Math.floor(array.length / 2);
+    let root = NodeFactory(array[middle]);
 
     return root;
   };
