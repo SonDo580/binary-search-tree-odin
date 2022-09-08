@@ -51,13 +51,13 @@ function TreeFactory(array) {
       return;
     }
 
-    // if (value < node.data) {
-    //   insert(node.left, value);
-    // }
+    if (value < node.data) {
+      insert(node.left, value);
+    }
 
-    // if (value > node.data) {
-    //   insert(node.right, value);
-    // }
+    if (value > node.data) {
+      insert(node.right, value);
+    }
   }
 
   return { prettyPrint, insert };
