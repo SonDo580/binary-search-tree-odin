@@ -12,6 +12,7 @@ function TreeFactory(array) {
     }
     if (array.length === 1) {
       root = NodeFactory(array[0]);
+      return root;
     }
 
     array = quickSort(array);
