@@ -4,6 +4,7 @@ function NodeFactory(data, left = null, right = null) {
 
 function TreeFactory(array) {
   let root = null;
+  root = buildTree();
 
   function buildTree() {
     array = removeDuplicates(array);
@@ -25,7 +26,7 @@ function TreeFactory(array) {
     return root;
   }
 
-  const prettyPrint = (node, prefix = "", isLeft = true) => {
+  function prettyPrint(node = root, prefix = "", isLeft = true) {
     if (node.right !== null) {
       prettyPrint(node.right, `${prefix}${isLeft ? "│   " : "    "}`, false);
     }
@@ -33,7 +34,7 @@ function TreeFactory(array) {
     if (node.left !== null) {
       prettyPrint(node.left, `${prefix}${isLeft ? "    " : "│   "}`, true);
     }
-  };
+  }
 }
 
 // SORTING ALGORITHMS
@@ -85,3 +86,8 @@ function removeDuplicates(array) {
 // const sortedArray = quickSort(array, 0, array.length - 1);
 // console.log(sortedArray);
 // console.log(removeDuplicates(sortedArray));
+
+// DRIVER SCRIPT
+const array = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];
+const tree = TreeFactory(array);
+tree.prettyPrint();
