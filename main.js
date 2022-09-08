@@ -70,6 +70,12 @@ function TreeFactory(array) {
       } else if (node.right === null) {
         return node.left;
       }
+
+      // Node with 2 children:
+      // Get the smallest value in the right subtree
+      node.data = _minValue(node.right);
+      // Delete the node with smallest value in the right subtree
+      node.right = deleteValue(node.data, node.right);
     }
 
     return node;
