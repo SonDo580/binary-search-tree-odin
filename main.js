@@ -46,12 +46,6 @@ function quickSort(array) {
 }
 
 // REMOVE DUPLICATES
-function insertionSort(array) {
-  // use JS built-in sort()
-  array.sort((a, b) => a - b);
-  return array;
-}
-
 function removeDuplicates(array) {
   if (array.length <= 1) {
     return array;
