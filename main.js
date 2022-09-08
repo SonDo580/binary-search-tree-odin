@@ -43,6 +43,12 @@ function TreeFactory(array) {
   function insert(value) {
     if (root === null) {
       root = NodeFactory(value);
+      return;
+    }
+
+    if (root.data === value) {
+      console.log("Value already exists in BST");
+      return;
     }
   }
 
@@ -108,6 +114,6 @@ function removeDuplicates(sortedArray) {
 const array = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];
 const tree = TreeFactory(array);
 tree.prettyPrint();
-tree.insert(1000);
-console.log("* Insert 1000:");
+console.log("\n* Insert 8:");
+tree.insert(8);
 tree.prettyPrint();
