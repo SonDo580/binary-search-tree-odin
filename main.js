@@ -57,12 +57,22 @@ function TreeFactory(array) {
   function deleteValue(value, node = root) {
     if (node === null) {
       return node;
-    } else if (value < node.data) {
+    }
+
+    if (value < node.data) {
       node.left = deleteValue(value, node.left);
     } else if (value > node.data) {
       node.right = deleteValue(value, node.right);
     } else if (value === node.data) {
+      // Node with only 1 child or no child
+      if (node.left === null) {
+        return node.right;
+      } else if (node.right === null) {
+        return node.left;
+      }
     }
+
+    return node;
   }
 
   return { prettyPrint, insertValue, deleteValue };
