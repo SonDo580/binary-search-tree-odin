@@ -40,7 +40,7 @@ function TreeFactory(array) {
     }
   }
 
-  function insert(node = root, value) {
+  function insert(value, node = root) {
     if (node === null) {
       node = NodeFactory(value);
       return node;
