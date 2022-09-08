@@ -3,8 +3,7 @@ function NodeFactory(data, left = null, right = null) {
 }
 
 function TreeFactory(array) {
-  array = removeDuplicates(array);
-  array = quickSort(array);
+  array = quickSort(removeDuplicates(array));
 
   let root = _buildTree(array);
 
