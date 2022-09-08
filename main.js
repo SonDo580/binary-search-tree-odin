@@ -13,8 +13,7 @@ function TreeFactory(array) {
       return null;
     }
     if (array.length === 1) {
-      root = NodeFactory(array[0]);
-      return root;
+      return NodeFactory(array[0]);
     }
 
     let middle = Math.floor((array.length - 1) / 2);
