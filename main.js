@@ -4,9 +4,9 @@ function NodeFactory(data, left = null, right = null) {
 
 function TreeFactory(array) {
   let root = null;
-  root = buildTree();
+  root = _buildTree();
 
-  function buildTree() {
+  function _buildTree() {
     array = removeDuplicates(array);
     if (array.length === 0) {
       return null;
@@ -35,6 +35,8 @@ function TreeFactory(array) {
       prettyPrint(node.left, `${prefix}${isLeft ? "    " : "│   "}`, true);
     }
   }
+
+  return { prettyPrint };
 }
 
 // SORTING ALGORITHMS
