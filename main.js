@@ -40,13 +40,13 @@ function TreeFactory(array) {
     }
   }
 
-  function insert(value, node = root) {
+  function insertValue(value, node = root) {
     if (node === null) {
       node = NodeFactory(value);
     } else if (value < node.data) {
-      node.left = insert(value, node.left);
+      node.left = insertValue(value, node.left);
     } else if (value > node.data) {
-      node.right = insert(value, node.right);
+      node.right = insertValue(value, node.right);
     } else if (value === node.data) {
       console.log("Value already exists in BST");
     }
@@ -54,7 +54,9 @@ function TreeFactory(array) {
     return node;
   }
 
-  return { prettyPrint, insert };
+  // function deleteNode(value, node = root) {}
+
+  return { prettyPrint, insertValue };
 }
 
 // SORTING ALGORITHMS
@@ -117,11 +119,11 @@ const array = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];
 const tree = TreeFactory(array);
 tree.prettyPrint();
 console.log("\n* Insert 9:");
-tree.insert(9);
+tree.insertValue(9);
 tree.prettyPrint();
 console.log("\n* Insert 100:");
-tree.insert(100);
+tree.insertValue(100);
 tree.prettyPrint();
 console.log("\n* Insert 6:");
-tree.insert(6);
+tree.insertValue(6);
 tree.prettyPrint();
