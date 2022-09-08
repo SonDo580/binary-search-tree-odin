@@ -19,63 +19,30 @@ function TreeFactory(array) {
 }
 
 // SORTING ALGORITHMS
-// function _swap(array, i, j) {
-//   let temp = array[i];
-//   array[i] = array[j];
-//   array[j] = temp;
-// }
-
-// function _partition(array, left, right) {
-//   let pivot = array[Math.floor((left + right) / 2)]; // use the middle element as pivot
-
-//   let i = left; // left pointer
-//   let j = right; // right pointer
-
-//   while (i <= j) {
-//     while (array[i] < pivot) {
-//       i++;
-//     }
-//     while (array[j] > pivot) {
-//       j--;
-//     }
-//     if (i <= j) {
-//       _swap(array, i, j);
-//       i++;
-//       j--;
-//     }
-//   }
-
-//   return i; // pivot is now sorted and remain at this same index
-// }
-
-// function quickSort(array, left, right) {
-//   let index;
-
-//   if (array.length > 1) {
-//     index = _partition(array, left, right); // (new) index of the pivot
-
-//     // sort the elements on the left side of the pivot
-//     if (left < index - 1) {
-//       quickSort(array, left, index - 1);
-//     }
-
-//     // sort the elements on the right side of the pivot
-//     if (index < right) {
-//       quickSort(array, index, right);
-//     }
-//   }
-
-//   return array;
-// }
-
 function quickSort(array) {
-  const lessList = [];
-  const moreList = [];
+  let lessList = [];
+  let moreList = [];
   const pivotList = [];
 
   if (array.length <= 1) {
     return array;
   }
+
+  pivot = array[0]; // just use the first element
+  for (let value of array) {
+    if (value < pivot) {
+      lessList.push(value);
+    } else if (value > pivot) {
+      moreList.push(value);
+    } else if (value === pivot) {
+      pivotList.push(value);
+    }
+  }
+
+  lessList = quickSort(lessList);
+  moreList = quickSort(moreList);
+
+  return [...lessList, ...pivotList, ...moreList];
 }
 
 // REMOVE DUPLICATES
