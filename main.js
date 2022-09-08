@@ -56,7 +56,7 @@ function TreeFactory(array) {
 
   function deleteValue(value, node = root) {
     if (node === null) {
-      return;
+      return node;
     } else if (value < node.data) {
       node.left = deleteValue(value, node.left);
     } else if (value > node.data) {
