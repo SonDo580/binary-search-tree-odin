@@ -91,9 +91,9 @@ function TreeFactory(array) {
     return min;
   }
 
-  function find(value, node = root) {}
+  function findValue(value, node = root) {}
 
-  return { prettyPrint, insertValue, deleteValue };
+  return { prettyPrint, insertValue, deleteValue, findValue };
 }
 
 // SORTING ALGORITHMS
