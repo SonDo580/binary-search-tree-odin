@@ -14,6 +14,8 @@ function TreeFactory(array) {
       root = NodeFactory(array[0]);
     }
 
+    array = quickSort(array);
+
     return root;
   };
 }
