@@ -56,6 +56,7 @@ function TreeFactory(array) {
 
   function deleteValue(value, node = root) {
     if (node === null) {
+      console.log("Value not found");
       return node;
     }
 
@@ -160,4 +161,10 @@ tree.insertValue(100);
 tree.prettyPrint();
 console.log("\n* Insert 6:");
 tree.insertValue(6);
+tree.prettyPrint();
+console.log("\n* Delete 67:");
+tree.deleteValue(67);
+tree.prettyPrint();
+console.log("\n* Delete 10:"); // not found
+tree.deleteValue(10);
 tree.prettyPrint();
