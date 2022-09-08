@@ -81,6 +81,15 @@ function TreeFactory(array) {
     return node;
   }
 
+  function _minValue(node) {
+    let min = node.data;
+    while (node.left !== null) {
+      min = node.left.data;
+      node = node.left;
+    }
+    return min;
+  }
+
   return { prettyPrint, insertValue, deleteValue };
 }
 
