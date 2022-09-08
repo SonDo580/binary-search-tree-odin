@@ -7,9 +7,9 @@ function TreeFactory(array) {
   array = quickSort(array);
 
   let root = null;
-  root = _buildTree();
+  root = _buildTree(array);
 
-  function _buildTree() {
+  function _buildTree(array) {
     if (array.length === 0) {
       return null;
     }
