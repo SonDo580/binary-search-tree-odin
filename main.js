@@ -116,6 +116,12 @@ function removeDuplicates(sortedArray) {
 const array = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];
 const tree = TreeFactory(array);
 tree.prettyPrint();
+console.log("\n* Insert 9:");
+tree.insert(9);
+tree.prettyPrint();
 console.log("\n* Insert 100:");
 tree.insert(100);
+tree.prettyPrint();
+console.log("\n* Insert 6:");
+tree.insert(6);
 tree.prettyPrint();
