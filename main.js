@@ -3,11 +3,13 @@ function NodeFactory(data, left = null, right = null) {
 }
 
 function TreeFactory(array) {
+  array = removeDuplicates(array);
+  array = quickSort(array);
+
   let root = null;
   root = _buildTree();
 
   function _buildTree() {
-    array = removeDuplicates(array);
     if (array.length === 0) {
       return null;
     }
@@ -16,12 +18,10 @@ function TreeFactory(array) {
       return root;
     }
 
-    array = quickSort(array);
-
     let middle = Math.floor(array.length / 2);
     root = NodeFactory(array[middle]);
-    root.left = buildTree(array.slice(0, middle));
-    root.right = buildTree(array.slice(middle + 1));
+    root.left = _buildTree(array.slice(0, middle));
+    root.right = _buildTree(array.slice(middle + 1));
 
     return root;
   }
