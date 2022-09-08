@@ -5,7 +5,7 @@ function NodeFactory(data, left = null, right = null) {
 function TreeFactory(array) {
   let root = null;
 
-  const buildTree = () => {
+  function buildTree() {
     array = removeDuplicates(array);
     if (array.length === 0) {
       return null;
@@ -16,11 +16,13 @@ function TreeFactory(array) {
     }
 
     array = quickSort(array);
+
     let middle = Math.floor(array.length / 2);
-    let root = NodeFactory(array[middle]);
+    root = NodeFactory(array[middle]);
+    // root.left = buildTree()
 
     return root;
-  };
+  }
 }
 
 // SORTING ALGORITHMS
