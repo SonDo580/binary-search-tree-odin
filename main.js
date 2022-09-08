@@ -91,6 +91,8 @@ function TreeFactory(array) {
     return min;
   }
 
+  function find(value, node = root) {}
+
   return { prettyPrint, insertValue, deleteValue };
 }
 
