@@ -54,9 +54,18 @@ function TreeFactory(array) {
     return node;
   }
 
-  function deleteValue(value, node = root) {}
+  function deleteValue(value, node = root) {
+    if (node === null) {
+      console.log("Value not found");
+    } else if (value < node.data) {
+      node.left = deleteValue(value, node.left);
+    } else if (value > node.data) {
+      node.right = deleteValue(value, node.right);
+    } else if (value === node.data) {
+    }
+  }
 
-  return { prettyPrint, insertValue };
+  return { prettyPrint, insertValue, deleteValue };
 }
 
 // SORTING ALGORITHMS
