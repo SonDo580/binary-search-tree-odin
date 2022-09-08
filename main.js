@@ -54,7 +54,7 @@ function TreeFactory(array) {
     return node;
   }
 
-  // function deleteNode(value, node = root) {}
+  function deleteValue(value, node = root) {}
 
   return { prettyPrint, insertValue };
 }
