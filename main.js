@@ -6,8 +6,7 @@ function TreeFactory(array) {
   array = removeDuplicates(array);
   array = quickSort(array);
 
-  let root = null;
-  root = _buildTree(array);
+  let root = _buildTree(array);
 
   function _buildTree(array) {
     if (array.length === 0) {
@@ -98,6 +97,7 @@ function removeDuplicates(array) {
 
 // DRIVER SCRIPT
 // const array = [];
-const array = [1, 7, 4, 23, 4, 3, 5, 7, 67, 6345, 324];
+const array = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];
 const tree = TreeFactory(array);
 tree.prettyPrint();
+console.log(array);
