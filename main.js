@@ -19,7 +19,8 @@ function TreeFactory(array) {
 
     let middle = Math.floor(array.length / 2);
     root = NodeFactory(array[middle]);
-    // root.left = buildTree()
+    root.left = buildTree(array.slice(0, middle));
+    root.right = buildTree(array.slice(middle + 1));
 
     return root;
   }
