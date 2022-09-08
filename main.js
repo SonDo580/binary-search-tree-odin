@@ -18,7 +18,7 @@ function TreeFactory(array) {
       return root;
     }
 
-    let middle = Math.floor(array.length / 2);
+    let middle = Math.floor((array.length - 1) / 2);
     root = NodeFactory(array[middle]);
     root.left = _buildTree(array.slice(0, middle));
     root.right = _buildTree(array.slice(middle + 1));
@@ -97,7 +97,7 @@ function removeDuplicates(array) {
 // console.log(removeDuplicates(sortedArray));
 
 // DRIVER SCRIPT
-const array = [];
-// const array = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];
+// const array = [];
+const array = [1, 7, 4, 23, 4, 3, 5, 7, 67, 6345, 324];
 const tree = TreeFactory(array);
 tree.prettyPrint();
