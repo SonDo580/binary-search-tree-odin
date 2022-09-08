@@ -7,9 +7,8 @@ function TreeFactory(array) {
   array = quickSort(array);
 
   let root = null;
-  root = _buildTree(array);
 
-  function _buildTree(array) {
+  function buildTree(array) {
     if (array.length === 0) {
       return null;
     }
@@ -20,8 +19,8 @@ function TreeFactory(array) {
 
     let middle = Math.floor(array.length / 2);
     root = NodeFactory(array[middle]);
-    root.left = _buildTree(array.slice(0, middle));
-    root.right = _buildTree(array.slice(middle + 1));
+    root.left = buildTree(array.slice(0, middle));
+    root.right = buildTree(array.slice(middle + 1));
 
     return root;
   }
