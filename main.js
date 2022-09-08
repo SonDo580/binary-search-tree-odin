@@ -40,16 +40,24 @@ function TreeFactory(array) {
     }
   }
 
-  function insert(value) {
-    if (root === null) {
-      root = NodeFactory(value);
-      return;
+  function insert(node = root, value) {
+    if (node === null) {
+      node = NodeFactory(value);
+      return node;
     }
 
-    if (root.data === value) {
+    if (node.data === value) {
       console.log("Value already exists in BST");
       return;
     }
+
+    // if (value < node.data) {
+    //   insert(node.left, value);
+    // }
+
+    // if (value > node.data) {
+    //   insert(node.right, value);
+    // }
   }
 
   return { prettyPrint, insert };
