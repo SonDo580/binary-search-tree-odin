@@ -209,6 +209,8 @@ function TreeFactory(array) {
     if (node === null) {
       return -1;
     }
+
+    let value = node.data;
   }
 
   return {
