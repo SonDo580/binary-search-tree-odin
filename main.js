@@ -116,6 +116,14 @@ function TreeFactory(array) {
     while (queue.length > 0) {
       let currentNode = queue.shift();
       cb(currentNode);
+
+      if (currentNode.left !== null) {
+        queue.push(currentNode.left);
+      }
+
+      if (currentNode.right !== null) {
+        queue.push(currentNode.right);
+      }
     }
   }
 
