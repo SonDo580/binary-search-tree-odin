@@ -180,6 +180,29 @@ function TreeFactory(array) {
     return arr;
   }
 
+  function postOrder(cb = null, node = root) {
+    if (node === null) {
+      return [];
+    }
+
+    let arr = [];
+
+    if (node.left !== null) {
+      arr = [...postOrder(cb, node.left)];
+    }
+
+    if (node.right !== null) {
+      arr = [...postOrder(cb, node.right)];
+    }
+
+    if (cb !== null) {
+      cb(node.data);
+    }
+    arr.push(node.data);
+
+    return arr;
+  }
+
   return {
     prettyPrint,
     insertValue,
@@ -188,6 +211,7 @@ function TreeFactory(array) {
     levelOrder,
     inOrder,
     preOrder,
+    postOrder,
   };
 }
 
@@ -278,3 +302,6 @@ console.log(tree.inOrder());
 console.log("\n* Pre-Order travesal:");
 tree.preOrder(console.log);
 console.log(tree.preOrder());
+console.log("\n* Post-Order travesal:");
+tree.postOrder(console.log);
+console.log(tree.postOrder());
