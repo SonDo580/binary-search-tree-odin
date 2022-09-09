@@ -277,7 +277,10 @@ function removeDuplicates(sortedArray) {
 // const array = [];
 const array = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];
 const tree = TreeFactory(array);
+const root = tree.getRoot();
+// tree.prettyPrint(root);
 tree.prettyPrint();
+
 // console.log("\n* Insert 9:");
 // tree.insertValue(9);
 // tree.prettyPrint();
@@ -287,16 +290,19 @@ tree.prettyPrint();
 console.log("\n* Insert 6:");
 tree.insertValue(6);
 tree.prettyPrint();
+
 // console.log("\n* Delete 67:");
 // tree.deleteValue(67);
 // tree.prettyPrint();
 // console.log("\n* Delete 10:"); // not found
 // tree.deleteValue(10);
 // tree.prettyPrint();
+
 // console.log("\n* Find 10:");
 // tree.prettyPrint(tree.findValue(10));
 // console.log("\n* Find 100:");
 // tree.prettyPrint(tree.findValue(100));
+
 console.log("\n* Level-Order travesal:");
 tree.levelOrder(console.log);
 console.log(tree.levelOrder());
@@ -309,5 +315,8 @@ console.log(tree.preOrder());
 console.log("\n* Post-Order travesal:");
 tree.postOrder(console.log);
 console.log(tree.postOrder());
+
 console.log("\n* Tree height:");
 console.log(tree.getHeight());
+console.log("\n* Node(root.left.right) height:");
+console.log(tree.getHeight(root.left.right));
