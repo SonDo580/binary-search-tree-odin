@@ -206,6 +206,10 @@ function TreeFactory(array) {
   }
 
   function getDepth(node = root) {
+    if (root === null) {
+      return;
+    }
+
     if (node === null) {
       return -1;
     }
@@ -213,6 +217,7 @@ function TreeFactory(array) {
     let value = node.data;
     if (value === root.value) {
       return 0;
+    } else {
     }
   }
 
