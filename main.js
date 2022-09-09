@@ -149,9 +149,11 @@ function TreeFactory(array) {
         inOrder(cb, node.left);
       }
 
-      // if (cb !== null) {
-
-      // }
+      if (cb !== null) {
+        cb(node.data);
+      } else {
+        arr.push(node.data);
+      }
     }
   }
 
