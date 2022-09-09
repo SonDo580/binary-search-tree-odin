@@ -139,9 +139,6 @@ function TreeFactory(array) {
       return;
     }
 
-    const stack = [];
-    stack.push(node.data);
-
     let arr = [];
 
     while (node.left !== null) {
@@ -250,4 +247,7 @@ tree.prettyPrint();
 // tree.prettyPrint(tree.findValue(100));
 console.log("\n* Level-Order travesal:");
 tree.levelOrder(console.log);
-console.log(tree.levelOrder()); // cb is null
+console.log(tree.levelOrder());
+console.log("\n* In-Order travesal:");
+tree.inOrder(console.log);
+console.log(tree.inOrder());
