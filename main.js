@@ -112,7 +112,7 @@ function TreeFactory(array) {
     }
     queue.push(node);
 
-    // const arr = [];
+    const arr = [];
 
     while (queue.length > 0) {
       let currentNode = queue.shift();
