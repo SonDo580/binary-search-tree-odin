@@ -211,10 +211,13 @@ function TreeFactory(array) {
     }
 
     let value = node.data;
+    let pointer = root;
+
     if (value === root.value) {
       return 0;
-    } else {
     }
+
+    while (value < pointer.data) {}
   }
 
   return {
