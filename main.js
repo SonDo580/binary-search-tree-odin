@@ -170,11 +170,11 @@ function TreeFactory(array) {
     arr.push(node.data);
 
     if (node.left !== null) {
-      arr = [...arr, ...inOrder(cb, node.left)];
+      arr = [...arr, ...preOrder(cb, node.left)];
     }
 
     if (node.right !== null) {
-      arr = [...arr, ...inOrder(cb, node.right)];
+      arr = [...arr, ...preOrder(cb, node.right)];
     }
 
     return arr;
