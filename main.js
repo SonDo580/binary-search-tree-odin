@@ -119,9 +119,8 @@ function TreeFactory(array) {
       let currentNode = queue.shift();
       if (cb !== null) {
         cb(currentNode.data);
-      } else {
-        arr.push(currentNode.data);
       }
+      arr.push(currentNode.data);
 
       if (currentNode.left !== null) {
         queue.push(currentNode.left);
@@ -131,9 +130,8 @@ function TreeFactory(array) {
         queue.push(currentNode.right);
       }
     }
-    if (arr.length > 0) {
-      return arr;
-    }
+
+    return arr;
   }
 
   function inOrder(cb = null, node = root) {
