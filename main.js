@@ -194,10 +194,10 @@ function TreeFactory(array) {
       return -1;
     }
 
-    let height = 0;
-    // let leftHeight = getHeight()
+    let leftHeight = getHeight(node.left);
+    let rightHeight = getHeight(node.right);
 
-    return height;
+    // return Math.max();
   }
 
   return {
