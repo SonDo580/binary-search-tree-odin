@@ -107,7 +107,7 @@ function TreeFactory(array) {
 
   function levelOrder(cb = null, node = root) {
     if (node === null) {
-      return;
+      return [];
     }
 
     const queue = [];
@@ -136,7 +136,7 @@ function TreeFactory(array) {
 
   function inOrder(cb = null, node = root) {
     if (node === null) {
-      return;
+      return [];
     }
 
     let arr = [];
