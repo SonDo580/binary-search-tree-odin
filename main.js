@@ -151,7 +151,7 @@ function TreeFactory(array) {
     arr.push(node.data);
 
     if (node.right !== null) {
-      arr = [arr, ...inOrder(cb, node.right)];
+      arr = [...arr, ...inOrder(cb, node.right)];
     }
 
     return arr;
