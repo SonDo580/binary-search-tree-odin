@@ -196,8 +196,9 @@ function TreeFactory(array) {
 
     let leftHeight = getHeight(node.left);
     let rightHeight = getHeight(node.right);
+    let max = Math.max(leftHeight, rightHeight) + 1;
 
-    // return Math.max();
+    return max;
   }
 
   return {
