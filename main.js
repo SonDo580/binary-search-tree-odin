@@ -140,7 +140,7 @@ function TreeFactory(array) {
       }
 
       const stack = [];
-      stack.push(node);
+      stack.push(node.data);
       while (node.left !== null) {
         inOrder(cb, node.left);
       }
