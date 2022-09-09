@@ -133,6 +133,12 @@ function TreeFactory(array) {
     if (arr.length > 0) {
       return arr;
     }
+
+    function inOrder(cb = null, node = root) {
+      if (node === null) {
+        return;
+      }
+    }
   }
 
   return { prettyPrint, insertValue, deleteValue, findValue, levelOrder };
@@ -193,8 +199,8 @@ function removeDuplicates(sortedArray) {
 // console.log(removeDuplicates(sortedArray));
 
 // DRIVER SCRIPT
-const array = [];
-// const array = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];
+// const array = [];
+const array = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];
 const tree = TreeFactory(array);
 tree.prettyPrint();
 // console.log("\n* Insert 9:");
