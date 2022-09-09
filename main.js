@@ -141,18 +141,14 @@ function TreeFactory(array) {
 
     let arr = [];
 
-    if (node.left !== null) {
-      arr = [...inOrder(cb, node.left)];
-    }
+    arr = [...inOrder(cb, node.left)];
 
     if (cb !== null) {
       cb(node.data);
     }
     arr.push(node.data);
 
-    if (node.right !== null) {
-      arr = [...arr, ...inOrder(cb, node.right)];
-    }
+    arr = [...arr, ...inOrder(cb, node.right)];
 
     return arr;
   }
@@ -169,13 +165,8 @@ function TreeFactory(array) {
     }
     arr.push(node.data);
 
-    if (node.left !== null) {
-      arr = [...arr, ...preOrder(cb, node.left)];
-    }
-
-    if (node.right !== null) {
-      arr = [...arr, ...preOrder(cb, node.right)];
-    }
+    arr = [...arr, ...preOrder(cb, node.left)];
+    arr = [...arr, ...preOrder(cb, node.right)];
 
     return arr;
   }
@@ -187,13 +178,8 @@ function TreeFactory(array) {
 
     let arr = [];
 
-    if (node.left !== null) {
-      arr = [...postOrder(cb, node.left)];
-    }
-
-    if (node.right !== null) {
-      arr = [...postOrder(cb, node.right)];
-    }
+    arr = [...postOrder(cb, node.left)];
+    arr = [...postOrder(cb, node.right)];
 
     if (cb !== null) {
       cb(node.data);
@@ -201,6 +187,16 @@ function TreeFactory(array) {
     arr.push(node.data);
 
     return arr;
+  }
+
+  function height(node = root) {
+    if (node === null) {
+      return -1;
+    }
+
+    let height = 0;
+
+    return height;
   }
 
   return {
@@ -212,6 +208,7 @@ function TreeFactory(array) {
     inOrder,
     preOrder,
     postOrder,
+    height,
   };
 }
 
