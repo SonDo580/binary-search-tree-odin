@@ -105,7 +105,9 @@ function TreeFactory(array) {
     }
   }
 
-  return { prettyPrint, insertValue, deleteValue, findValue };
+  function levelOrder(cb) {}
+
+  return { prettyPrint, insertValue, deleteValue, findValue, levelOrder };
 }
 
 // SORTING ALGORITHMS
@@ -167,22 +169,22 @@ function removeDuplicates(sortedArray) {
 const array = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];
 const tree = TreeFactory(array);
 tree.prettyPrint();
-console.log("\n* Insert 9:");
-tree.insertValue(9);
-tree.prettyPrint();
-console.log("\n* Insert 100:");
-tree.insertValue(100);
-tree.prettyPrint();
-console.log("\n* Insert 6:");
-tree.insertValue(6);
-tree.prettyPrint();
-console.log("\n* Delete 67:");
-tree.deleteValue(67);
-tree.prettyPrint();
-console.log("\n* Delete 10:"); // not found
-tree.deleteValue(10);
-tree.prettyPrint();
-console.log("\n* Find 10:");
-tree.prettyPrint(tree.findValue(10));
-console.log("\n* Find 100:");
-tree.prettyPrint(tree.findValue(100));
+// console.log("\n* Insert 9:");
+// tree.insertValue(9);
+// tree.prettyPrint();
+// console.log("\n* Insert 100:");
+// tree.insertValue(100);
+// tree.prettyPrint();
+// console.log("\n* Insert 6:");
+// tree.insertValue(6);
+// tree.prettyPrint();
+// console.log("\n* Delete 67:");
+// tree.deleteValue(67);
+// tree.prettyPrint();
+// console.log("\n* Delete 10:"); // not found
+// tree.deleteValue(10);
+// tree.prettyPrint();
+// console.log("\n* Find 10:");
+// tree.prettyPrint(tree.findValue(10));
+// console.log("\n* Find 100:");
+// tree.prettyPrint(tree.findValue(100));
