@@ -211,6 +211,9 @@ function TreeFactory(array) {
     }
 
     let value = node.data;
+    if (value === root.value) {
+      return 0;
+    }
   }
 
   return {
@@ -307,10 +310,10 @@ tree.prettyPrint();
 // tree.deleteValue(10);
 // tree.prettyPrint();
 
-// console.log("\n* Find 10:");
-// tree.prettyPrint(tree.findValue(10));
-// console.log("\n* Find 100:");
-// tree.prettyPrint(tree.findValue(100));
+console.log("\n* Find 10:");
+tree.prettyPrint(tree.findValue(10));
+console.log("\n* Find 67:");
+tree.prettyPrint(tree.findValue(67));
 
 console.log("\n* Level-Order travesal:");
 tree.levelOrder(console.log);
