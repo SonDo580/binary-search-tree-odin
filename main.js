@@ -105,7 +105,14 @@ function TreeFactory(array) {
     }
   }
 
-  function levelOrder(cb) {}
+  function levelOrder(cb, node = root) {
+    const queue = [];
+    if (node === null) {
+      return;
+    }
+
+    queue.push(node);
+  }
 
   return { prettyPrint, insertValue, deleteValue, findValue, levelOrder };
 }
