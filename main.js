@@ -214,9 +214,15 @@ function TreeFactory(array) {
     let pointer = root;
     let depth = 0;
 
-    // while (value < pointer.data) {
-    //   pointer = pointer.left;
-    // }
+    while (value < pointer.data) {
+      pointer = pointer.left;
+      depth++;
+    }
+
+    while (value > pointer.data) {
+      pointer = pointer.right;
+      depth++;
+    }
 
     // if (value === pointer.data) {
     //   return 0;
