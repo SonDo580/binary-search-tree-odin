@@ -138,6 +138,8 @@ function TreeFactory(array) {
       if (node === null) {
         return;
       }
+
+      const stack = [];
     }
   }
 
