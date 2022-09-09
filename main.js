@@ -179,7 +179,7 @@ function TreeFactory(array) {
     let arr = [];
 
     arr = [...postOrder(cb, node.left)];
-    arr = [...postOrder(cb, node.right)];
+    arr = [...arr, ...postOrder(cb, node.right)];
 
     if (cb !== null) {
       cb(node.data);
@@ -276,12 +276,12 @@ tree.prettyPrint();
 // console.log("\n* Insert 9:");
 // tree.insertValue(9);
 // tree.prettyPrint();
-// console.log("\n* Insert 100:");
-// tree.insertValue(100);
-// tree.prettyPrint();
-// console.log("\n* Insert 6:");
-// tree.insertValue(6);
-// tree.prettyPrint();
+console.log("\n* Insert 100:");
+tree.insertValue(100);
+tree.prettyPrint();
+console.log("\n* Insert 6:");
+tree.insertValue(6);
+tree.prettyPrint();
 // console.log("\n* Delete 67:");
 // tree.deleteValue(67);
 // tree.prettyPrint();
@@ -304,3 +304,5 @@ console.log(tree.preOrder());
 console.log("\n* Post-Order travesal:");
 tree.postOrder(console.log);
 console.log(tree.postOrder());
+console.log("\n* Tree height:");
+console.log(tree.getHeight());
