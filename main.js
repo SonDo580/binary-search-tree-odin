@@ -112,6 +112,11 @@ function TreeFactory(array) {
     }
 
     queue.push(node);
+
+    while (queue.length > 0) {
+      let currentNode = queue.shift();
+      cb(currentNode);
+    }
   }
 
   return { prettyPrint, insertValue, deleteValue, findValue, levelOrder };
