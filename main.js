@@ -7,6 +7,10 @@ function TreeFactory(array) {
 
   let root = _buildTree(array);
 
+  function getRoot() {
+    return root;
+  }
+
   function _buildTree(array) {
     if (array.length === 0) {
       return null;
@@ -202,6 +206,7 @@ function TreeFactory(array) {
   }
 
   return {
+    getRoot,
     prettyPrint,
     insertValue,
     deleteValue,
