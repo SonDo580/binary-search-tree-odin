@@ -206,10 +206,6 @@ function TreeFactory(array) {
   }
 
   function getDepth(node = root) {
-    if (root === null) {
-      return;
-    }
-
     if (node === null) {
       return -1;
     }
