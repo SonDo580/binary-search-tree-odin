@@ -160,7 +160,14 @@ function TreeFactory(array) {
     return arr;
   }
 
-  return { prettyPrint, insertValue, deleteValue, findValue, levelOrder };
+  return {
+    prettyPrint,
+    insertValue,
+    deleteValue,
+    findValue,
+    levelOrder,
+    inOrder,
+  };
 }
 
 // SORTING ALGORITHMS
