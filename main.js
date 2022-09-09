@@ -130,6 +130,9 @@ function TreeFactory(array) {
         queue.push(currentNode.right);
       }
     }
+    if (arr.length > 0) {
+      return arr;
+    }
   }
 
   return { prettyPrint, insertValue, deleteValue, findValue, levelOrder };
@@ -215,3 +218,4 @@ tree.prettyPrint();
 // tree.prettyPrint(tree.findValue(100));
 console.log("\n* Level-Order travesal:");
 tree.levelOrder(console.log);
+tree.levelOrder();
