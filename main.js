@@ -189,12 +189,13 @@ function TreeFactory(array) {
     return arr;
   }
 
-  function height(node = root) {
+  function getHeight(node = root) {
     if (node === null) {
       return -1;
     }
 
     let height = 0;
+    // let leftHeight = getHeight()
 
     return height;
   }
@@ -208,7 +209,7 @@ function TreeFactory(array) {
     inOrder,
     preOrder,
     postOrder,
-    height,
+    getHeight,
   };
 }
 
