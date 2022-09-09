@@ -154,6 +154,10 @@ function TreeFactory(array) {
       } else {
         arr.push(node.data);
       }
+
+      while (node.right !== null) {
+        inOrder(cb, node.right);
+      }
     }
   }
 
