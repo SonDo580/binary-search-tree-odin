@@ -105,17 +105,20 @@ function TreeFactory(array) {
     }
   }
 
-  function levelOrder(cb, node = root) {
+  function levelOrder(cb = null, node = root) {
     const queue = [];
     if (node === null) {
       return;
     }
-
     queue.push(node);
+
+    // const arr = [];
 
     while (queue.length > 0) {
       let currentNode = queue.shift();
-      cb(currentNode);
+      if (cb !== null) {
+        cb(currentNode.data);
+      }
 
       if (currentNode.left !== null) {
         queue.push(currentNode.left);
@@ -208,3 +211,5 @@ tree.prettyPrint();
 // tree.prettyPrint(tree.findValue(10));
 // console.log("\n* Find 100:");
 // tree.prettyPrint(tree.findValue(100));
+console.log("\n* Level-Order travesal:");
+tree.levelOrder(console.log);
