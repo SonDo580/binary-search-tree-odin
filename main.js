@@ -142,10 +142,10 @@ function TreeFactory(array) {
     const stack = [];
     stack.push(node.data);
 
-    const arr = [];
+    let arr = [];
 
     while (node.left !== null) {
-      inOrder(cb, node.left);
+      arr = [...inOrder(cb, node.left)];
     }
 
     if (cb !== null) {
@@ -154,7 +154,7 @@ function TreeFactory(array) {
     arr.push(node.data);
 
     while (node.right !== null) {
-      inOrder(cb, node.right);
+      arr = [arr, ...inOrder(cb, node.right)];
     }
 
     return arr;
