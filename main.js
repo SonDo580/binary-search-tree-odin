@@ -106,10 +106,11 @@ function TreeFactory(array) {
   }
 
   function levelOrder(cb = null, node = root) {
-    const queue = [];
     if (node === null) {
       return;
     }
+
+    const queue = [];
     queue.push(node);
 
     const arr = [];
@@ -141,9 +142,14 @@ function TreeFactory(array) {
 
       const stack = [];
       stack.push(node.data);
+
       while (node.left !== null) {
         inOrder(cb, node.left);
       }
+
+      // if (cb !== null) {
+
+      // }
     }
   }
 
