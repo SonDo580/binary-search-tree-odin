@@ -212,12 +212,17 @@ function TreeFactory(array) {
 
     let value = node.data;
     let pointer = root;
+    let depth = 0;
 
-    if (value === root.value) {
-      return 0;
-    }
+    // while (value < pointer.data) {
+    //   pointer = pointer.left;
+    // }
 
-    while (value < pointer.data) {}
+    // if (value === pointer.data) {
+    //   return 0;
+    // }
+
+    return depth;
   }
 
   return {
