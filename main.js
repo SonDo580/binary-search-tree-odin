@@ -205,6 +205,12 @@ function TreeFactory(array) {
     return max;
   }
 
+  function getDepth(node = root) {
+    if (node === null) {
+      return -1;
+    }
+  }
+
   return {
     getRoot,
     prettyPrint,
@@ -216,6 +222,7 @@ function TreeFactory(array) {
     preOrder,
     postOrder,
     getHeight,
+    getDepth,
   };
 }
 
@@ -286,7 +293,7 @@ tree.prettyPrint();
 // tree.prettyPrint();
 console.log("\n* Insert 100:");
 tree.insertValue(100);
-tree.prettyPrint();
+// tree.prettyPrint();
 console.log("\n* Insert 6:");
 tree.insertValue(6);
 tree.prettyPrint();
