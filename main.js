@@ -134,30 +134,30 @@ function TreeFactory(array) {
     if (arr.length > 0) {
       return arr;
     }
+  }
 
-    function inOrder(cb = null, node = root) {
-      if (node === null) {
-        return;
-      }
+  function inOrder(cb = null, node = root) {
+    if (node === null) {
+      return;
+    }
 
-      const stack = [];
-      stack.push(node.data);
+    const stack = [];
+    stack.push(node.data);
 
-      const arr = [];
+    const arr = [];
 
-      while (node.left !== null) {
-        inOrder(cb, node.left);
-      }
+    while (node.left !== null) {
+      inOrder(cb, node.left);
+    }
 
-      if (cb !== null) {
-        cb(node.data);
-      } else {
-        arr.push(node.data);
-      }
+    if (cb !== null) {
+      cb(node.data);
+    } else {
+      arr.push(node.data);
+    }
 
-      while (node.right !== null) {
-        inOrder(cb, node.right);
-      }
+    while (node.right !== null) {
+      inOrder(cb, node.right);
     }
   }
 
