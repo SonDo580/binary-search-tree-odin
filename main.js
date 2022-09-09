@@ -150,13 +150,14 @@ function TreeFactory(array) {
 
     if (cb !== null) {
       cb(node.data);
-    } else {
-      arr.push(node.data);
     }
+    arr.push(node.data);
 
     while (node.right !== null) {
       inOrder(cb, node.right);
     }
+
+    return arr;
   }
 
   return { prettyPrint, insertValue, deleteValue, findValue, levelOrder };
