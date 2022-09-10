@@ -229,17 +229,17 @@ function TreeFactory(array) {
     return depth;
   }
 
-  function isBalanced(node = root) {
+  function _isBalancedNumeric(node = root) {
     if (node === null) {
       return 0;
     }
 
-    let leftHeight = isBalanced(node.left);
+    let leftHeight = _isBalancedNumeric(node.left);
     if (leftHeight === -1) {
       return -1;
     }
 
-    let rightHeight = isBalanced(node.right);
+    let rightHeight = _isBalancedNumeric(node.right);
     if (rightHeight === -1) {
       return -1;
     }
