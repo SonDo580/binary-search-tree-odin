@@ -229,6 +229,15 @@ function TreeFactory(array) {
     return depth;
   }
 
+  function isBalanced(node = root) {
+    if (node === null) {
+      return 0;
+    }
+
+    // let leftCheck = isBalanced(node.left);
+    // let rightCheck = isBalanced(node.right);
+  }
+
   return {
     getRoot,
     prettyPrint,
