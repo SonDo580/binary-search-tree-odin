@@ -240,7 +240,7 @@ function TreeFactory(array) {
     if (Math.abs(leftHeight - rightHeight) > 1) {
       return -1;
     } else {
-      // return Math.max();
+      return Math.max(leftHeight, rightHeight) + 1;
     }
   }
 
