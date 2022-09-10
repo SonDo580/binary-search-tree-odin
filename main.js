@@ -265,6 +265,7 @@ function TreeFactory(array) {
     }
 
     const dataArray = inOrder();
+    root = _buildTree(dataArray);
   }
 
   return {
