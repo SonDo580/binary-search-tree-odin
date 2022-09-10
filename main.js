@@ -234,8 +234,14 @@ function TreeFactory(array) {
       return 0;
     }
 
-    // let leftCheck = isBalanced(node.left);
-    // let rightCheck = isBalanced(node.right);
+    let leftHeight = isBalanced(node.left);
+    let rightHeight = isBalanced(node.right);
+
+    if (Math.abs(leftHeight - rightHeight) > 1) {
+      return -1;
+    } else {
+      // return Math.max();
+    }
   }
 
   return {
