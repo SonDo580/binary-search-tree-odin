@@ -235,7 +235,14 @@ function TreeFactory(array) {
     }
 
     let leftHeight = isBalanced(node.left);
+    if (leftHeight === -1) {
+      return -1;
+    }
+
     let rightHeight = isBalanced(node.right);
+    if (rightHeight === -1) {
+      return -1;
+    }
 
     if (Math.abs(leftHeight - rightHeight) > 1) {
       return -1;
