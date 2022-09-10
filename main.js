@@ -281,7 +281,7 @@ function TreeFactory(array) {
     getHeight,
     getDepth,
     isBalanced,
-    reBalance,
+    rebalance,
   };
 }
 
@@ -391,6 +391,13 @@ console.log("\n* Node(root.left.right) height:");
 console.log(tree.getHeight(root.left.right));
 console.log("\n* Node(root.left) depth:");
 console.log(tree.getDepth(root.left));
+
+console.log("\n* Tree is balanced:");
+console.log(tree.isBalanced());
+
+console.log("\n* Rebalance the tree:");
+tree.rebalance();
+tree.prettyPrint();
 
 console.log("\n* Tree is balanced:");
 console.log(tree.isBalanced());
