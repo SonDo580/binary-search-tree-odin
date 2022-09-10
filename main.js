@@ -224,10 +224,8 @@ function TreeFactory(array) {
       depth++;
     }
 
-    // if (value === pointer.data) {
-    //   return 0;
-    // }
-
+    // Because 'node' is extracted from the tree, 'value' will be found.
+    // If value === pointer.data
     return depth;
   }
 
@@ -347,3 +345,5 @@ console.log("\n* Tree height:");
 console.log(tree.getHeight());
 console.log("\n* Node(root.left.right) height:");
 console.log(tree.getHeight(root.left.right));
+console.log("\n* Node(root.left) depth:");
+console.log(tree.getDepth(root.left));
