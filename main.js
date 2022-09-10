@@ -251,6 +251,14 @@ function TreeFactory(array) {
     }
   }
 
+  function isBalanced() {
+    if (_isBalancedNumeric() > -1) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   return {
     getRoot,
     prettyPrint,
@@ -263,6 +271,7 @@ function TreeFactory(array) {
     postOrder,
     getHeight,
     getDepth,
+    isBalanced,
   };
 }
 
