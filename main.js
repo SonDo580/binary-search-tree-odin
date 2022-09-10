@@ -337,6 +337,9 @@ const root = tree.getRoot();
 // tree.prettyPrint(root);
 tree.prettyPrint();
 
+console.log("\n* Tree is balanced:");
+console.log(tree.isBalanced());
+
 // console.log("\n* Insert 9:");
 // tree.insertValue(9);
 // tree.prettyPrint();
