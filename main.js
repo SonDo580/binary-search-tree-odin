@@ -259,6 +259,8 @@ function TreeFactory(array) {
     }
   }
 
+  function rebalance() {}
+
   return {
     getRoot,
     prettyPrint,
@@ -272,6 +274,7 @@ function TreeFactory(array) {
     getHeight,
     getDepth,
     isBalanced,
+    reBalance,
   };
 }
 
