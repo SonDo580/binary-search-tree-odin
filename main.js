@@ -259,7 +259,11 @@ function TreeFactory(array) {
     }
   }
 
-  function rebalance() {}
+  function rebalance() {
+    if (isBalanced()) {
+      return;
+    }
+  }
 
   return {
     getRoot,
