@@ -263,6 +263,8 @@ function TreeFactory(array) {
     if (isBalanced()) {
       return;
     }
+
+    const dataArray = inOrder();
   }
 
   return {
